@@ -14,7 +14,7 @@ public class GameQuitter : MonoBehaviour {
 		
 	}
 
-	public void StartGame() {
+	public void EndGame() {
 		Application.Quit ();
 	}
 }
