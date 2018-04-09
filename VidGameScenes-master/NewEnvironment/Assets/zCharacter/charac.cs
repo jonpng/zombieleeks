@@ -10,7 +10,9 @@ public class charac : MonoBehaviour {
 	public float turnSpeed = 100.0f;
 	private Vector3 moveDirection = Vector3.zero;
 	public float gravity = 0.0f;
-	private bool isAtak = false;
+	public bool isAtak = false;
+
+
 
 	// Use this for initialization
 	void Start () {

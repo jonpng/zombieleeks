@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class BurgerBoy : MonoBehaviour {
 
     Transform player;               // Reference to the player's position.
-    //PlayerHealth playerHealth;      // Reference to the player's health.
-    //EnemyHealth enemyHealth;        // Reference to this enemy's health.
+    PlayerHealth playerHealth;      // Reference to the player's health.
+    EnemyHealth enemyHealth;        // Reference to this enemy's health.
     NavMeshAgent nav;               // Reference to the nav mesh agent.
     Animator anim;
     Vector3 movement;                   // The vector to store the direction of the enemy's movement.
@@ -18,8 +18,8 @@ public class BurgerBoy : MonoBehaviour {
     {
         // Set up the references.
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //playerHealth = player.GetComponent<PlayerHealth>();
-       // enemyHealth = GetComponent<EnemyHealth>();
+        playerHealth = player.GetComponent<PlayerHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         anim.SetTrigger("PlayerFound");
@@ -36,27 +36,29 @@ public class BurgerBoy : MonoBehaviour {
     void Update()
     {
         // If the enemy and the player have health left...
-        //if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
-        //{
+        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        {
             // ... set the destination of the nav mesh agent to the player.
 
-        if (IsAttacking.stopMoving)
-        {
-            nav.enabled = false;
-        }
-        else
-        {
+        //if (IsAttacking.stopMoving)
+        //{
+       //     nav.enabled = false;
+       // }
+       // else
+       // {
+            
             nav.SetDestination(player.position);
+            
         }
         
             
         
         //}
         /// Otherwise...
-        //else
-        //{
+        else
+        {
         // ... disable the nav mesh agent.
-        // nav.enabled = false;
-        //}
+         nav.enabled = false;
+        }
     }
 }
