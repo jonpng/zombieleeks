@@ -19,8 +19,9 @@ public class Slash : MonoBehaviour {
     void Awake()
     {
         // Setting up the references.
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyHealth = enemy.GetComponent<EnemyHealth>();
+        //enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemy = GetComponent<GameObject>();
+        enemyHealth = GetComponent<EnemyHealth>();
         playerHealth = GetComponent<PlayerHealth>();
         anim = GetComponent<Animator>();
         player = GetComponent<charac>();
@@ -31,10 +32,11 @@ public class Slash : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the enemy and we're slashing...
-        if (other.gameObject == enemy)
+        if (other.gameObject.CompareTag("Enemy"))
         {
             // ... the enemy is in range.
             enemyInRange = true;
+            enemyHealth = other.GetComponent<EnemyHealth>();
             
         }
     }
@@ -60,6 +62,7 @@ public class Slash : MonoBehaviour {
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks && enemyInRange && enemyHealth.currentHealth > 0 && isAttacking)
         {
+
             // ... attack.
             Attack();
         }
@@ -81,10 +84,10 @@ public class Slash : MonoBehaviour {
         timer = 0f;
 
 
-        // If the player has health to lose...
+        // If the enemy has health to lose...
         if (enemyHealth.currentHealth > 0)
         {
-            // ... damage the player.
+            // ... damage the enemy.
             enemyHealth.TakeDamage(attackDamage);
         }
     }
