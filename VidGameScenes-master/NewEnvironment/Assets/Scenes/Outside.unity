@@ -2178,8 +2178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722978276eb33be4da2f93973320745f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
+  startingHealth: 1
+  currentHealth: 1
   sinkSpeed: 2.5
   scoreValue: 10
 --- !u!135 &421498340
@@ -2772,8 +2772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722978276eb33be4da2f93973320745f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
+  startingHealth: 1
+  currentHealth: 1
   sinkSpeed: 2.5
   scoreValue: 10
 --- !u!135 &532881705
@@ -4626,8 +4626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722978276eb33be4da2f93973320745f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
+  startingHealth: 1
+  currentHealth: 1
   sinkSpeed: 2.5
   scoreValue: 10
 --- !u!135 &877504223
@@ -4852,8 +4852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722978276eb33be4da2f93973320745f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
+  startingHealth: 1
+  currentHealth: 1
   sinkSpeed: 2.5
   scoreValue: 10
 --- !u!135 &925965668
@@ -8562,8 +8562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722978276eb33be4da2f93973320745f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
+  startingHealth: 1
+  currentHealth: 1
   sinkSpeed: 2.5
   scoreValue: 10
 --- !u!135 &1698670308

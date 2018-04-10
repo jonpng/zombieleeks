@@ -8,18 +8,6 @@ AnimatorController:
   m_Name: BurgerAC
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: PlayerDead
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Dead
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: PlayerNotFound
     m_Type: 9
     m_DefaultFloat: 0
@@ -39,6 +27,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: IsRunning
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: isDead
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -89,7 +83,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Dead
+    m_ConditionEvent: isDead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102974111348156776}
@@ -335,7 +329,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 276, y: -24, z: 0}
+  m_AnyStatePosition: {x: 300, y: -36, z: 0}
   m_EntryPosition: {x: 120, y: 168, z: 0}
   m_ExitPosition: {x: 672, y: 24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
