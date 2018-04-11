@@ -35,7 +35,6 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... the player is in range.
             playerInRange = true;
-            stopMoving = true;
         }
     }
 
@@ -47,7 +46,7 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... the player is no longer in range.
             playerInRange = false;
-            stopMoving = false;
+            anim.SetTrigger("Running");
         }
     }
 
@@ -63,7 +62,6 @@ public class EnemyAttack : MonoBehaviour
             // ... attack.
             Attack();
         }
-        
 
         // If the player has zero or less health...
         if (playerHealth.currentHealth <= 0)
@@ -79,7 +77,6 @@ public class EnemyAttack : MonoBehaviour
         anim.SetTrigger("Attack");
         // Reset the timer.
         timer = 0f;
-        
 
         // If the player has health to lose...
         if (playerHealth.currentHealth > 0)

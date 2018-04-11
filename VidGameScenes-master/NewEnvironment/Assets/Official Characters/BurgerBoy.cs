@@ -11,7 +11,7 @@ public class BurgerBoy : MonoBehaviour {
     NavMeshAgent nav;               // Reference to the nav mesh agent.
     Animator anim;
     Vector3 movement;                   // The vector to store the direction of the enemy's movement.
-    public float speed = 6f;
+    public float speed = 5f;
     EnemyAttack IsAttacking;
 
     void Awake()
@@ -31,7 +31,7 @@ public class BurgerBoy : MonoBehaviour {
     {
         // Normalise the movement vector and make it proportional to the speed per second.
         movement = movement.normalized * speed * Time.deltaTime;
-        anim.SetBool("IsRunning", true);
+        //anim.SetBool("IsRunning", true);
     }
     void Update()
     {

@@ -31,7 +31,7 @@ public class Slash : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        // If the entering collider is the enemy and we're slashing...
+        // If the entering collider is the enemy...
         if (other.gameObject.CompareTag("Enemy"))
         {
             // ... the enemy is in range.
@@ -44,8 +44,8 @@ public class Slash : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        // If the exiting collider is the player...
-        if (other.gameObject == enemy)
+        // If the exiting collider is the enemy...
+        if (other.gameObject.CompareTag("Enemy"))
         {
             // ... the enemy is no longer in range.
             enemyInRange = false;
@@ -58,7 +58,7 @@ public class Slash : MonoBehaviour {
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-        bool isAttacking = player.isAtak;
+        isAttacking = player.isAtak;
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks && enemyInRange && enemyHealth.currentHealth > 0 && isAttacking)
         {
@@ -79,7 +79,7 @@ public class Slash : MonoBehaviour {
 
     void Attack()
     {
-        anim.SetTrigger("Attack");
+        //anim.SetTrigger("Attack");
         // Reset the timer.
         timer = 0f;
 
