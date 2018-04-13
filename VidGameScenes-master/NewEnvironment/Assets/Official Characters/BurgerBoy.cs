@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class BurgerBoy : MonoBehaviour {
 
@@ -36,20 +37,21 @@ public class BurgerBoy : MonoBehaviour {
     void Update()
     {
         // If the enemy and the player have health left...
-        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
-        {
-            // ... set the destination of the nav mesh agent to the player.
+		if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0) {
+			// ... set the destination of the nav mesh agent to the player.
 
-        //if (IsAttacking.stopMoving)
-        //{
-       //     nav.enabled = false;
-       // }
-       // else
-       // {
+			//if (IsAttacking.stopMoving)
+			//{
+			//     nav.enabled = false;
+			// }
+			// else
+			// {
             
-            nav.SetDestination(player.position);
+			nav.SetDestination (player.position);
             
-        }
+		} else if (playerHealth.currentHealth < 0) {
+			SceneManager.LoadScene ("EndGameMenu");
+		}
         
             
         
