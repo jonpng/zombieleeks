@@ -97,4 +97,17 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.enabled = false;
        // playerShooting.enabled = false;
     }
+
+    public void TakeHealth(int amount)
+    {
+        int sum = currentHealth + amount;
+        if (sum < startingHealth)
+        {
+            currentHealth += amount;
+        }
+        else
+        {
+            currentHealth = startingHealth;
+        }
+    }
 }
