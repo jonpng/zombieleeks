@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Slash : MonoBehaviour {
@@ -15,17 +16,18 @@ public class Slash : MonoBehaviour {
     float timer;                                // Timer for counting up to the next attack.
     charac player;
     bool isAttacking;
-
+   
+ 
     void Awake()
     {
         // Setting up the references.
-        //enemy = GameObject.FindGameObjectWithTag("Enemy");
         enemy = GetComponent<GameObject>();
         enemyHealth = GetComponent<EnemyHealth>();
         playerHealth = GetComponent<PlayerHealth>();
         anim = GetComponent<Animator>();
         player = GetComponent<charac>();
         isAttacking = false;
+        
     }
 
 
@@ -37,7 +39,6 @@ public class Slash : MonoBehaviour {
             // ... the enemy is in range.
             enemyInRange = true;
             enemyHealth = other.GetComponent<EnemyHealth>();
-            
         }
     }
 
@@ -49,7 +50,6 @@ public class Slash : MonoBehaviour {
         {
             // ... the enemy is no longer in range.
             enemyInRange = false;
-            
         }
     }
 
@@ -62,7 +62,6 @@ public class Slash : MonoBehaviour {
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks && enemyInRange && enemyHealth.currentHealth > 0 && isAttacking)
         {
-
             // ... attack.
             Attack();
         }
@@ -91,4 +90,5 @@ public class Slash : MonoBehaviour {
             enemyHealth.TakeDamage(attackDamage);
         }
     }
+
 }

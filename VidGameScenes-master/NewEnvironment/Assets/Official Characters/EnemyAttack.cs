@@ -15,7 +15,6 @@ public class EnemyAttack : MonoBehaviour
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
-    public bool stopMoving;
 
     void Awake()
     {
@@ -24,7 +23,7 @@ public class EnemyAttack : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
-        stopMoving = false;
+        
     }
 
 

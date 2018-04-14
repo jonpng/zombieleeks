@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class charac : MonoBehaviour {
@@ -11,7 +12,8 @@ public class charac : MonoBehaviour {
 	private Vector3 moveDirection = Vector3.zero;
 	public float gravity = 0.0f;
 	public bool isAtak = false;
-
+    
+    
 
 
 	// Use this for initialization
