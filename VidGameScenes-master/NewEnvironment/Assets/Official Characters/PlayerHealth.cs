@@ -18,10 +18,9 @@ public class PlayerHealth : MonoBehaviour
     charac playerMovement;                              // Reference to the player's movement.
     //PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
     bool isDead;                                                // Whether the player is dead.
-    bool damaged;                                               // True when the player gets damaged.
+    bool damaged;       
 
-
-    void Awake()
+    private void Awake()
     {
         // Setting up the references.
         anim = GetComponent<Animator>();
@@ -62,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
+        HealthManager.health = currentHealth;
 
         // Set the health bar's value to the current health.
         //healthSlider.value = currentHealth;
@@ -109,5 +109,6 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = startingHealth;
         }
+        HealthManager.health = currentHealth;
     }
 }

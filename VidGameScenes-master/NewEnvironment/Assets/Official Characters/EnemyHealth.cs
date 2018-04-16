@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -17,14 +18,14 @@ public class EnemyHealth : MonoBehaviour
     bool isDead;                                  // Whether the enemy is dead.
     bool isSinking;                               // Whether the enemy has started sinking through the floor.
 
-    void Awake()
+
+    void Start()
     {
         // Setting up the references.
         anim = GetComponent<Animator>();
         //enemyAudio = GetComponent<AudioSource>();
         //hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
     }
@@ -68,6 +69,8 @@ public class EnemyHealth : MonoBehaviour
         //hitParticles.Play();
     }
 
+    
+
     void Death()
     {
         // The enemy is dead.
@@ -75,10 +78,12 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("dead!");
         // Turn the collider into a trigger so player can pass through it.
         capsuleCollider.isTrigger = true;
-
+        // Increase the score by the enemy's score value.
+        ScoreManager.score += scoreValue;
         // Tell the animator that the enemy is dead.
         anim.SetBool("isDead", true);
         isSinking = true;
+        
 
         // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
         //enemyAudio.clip = deathClip;
@@ -93,8 +98,7 @@ public class EnemyHealth : MonoBehaviour
         // Find the rigidbody component and make it kinematic (since we use Translate to sink the enemy).
         GetComponent<Rigidbody>().isKinematic = true;
 
-        // Increase the score by the enemy's score value.
-     //   ScoreManager.score += scoreValue;
+        
 
         // After 2 seconds destory the enemy.
         Destroy(gameObject, 5f);
