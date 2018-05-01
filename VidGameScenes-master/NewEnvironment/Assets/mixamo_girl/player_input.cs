@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterInputController))]
 public class player_input : MonoBehaviour {
 
+    private AudioSource leekSlash;
+
 	private Animator anim;
 	private Rigidbody rbody;
 	private CharacterController controller;
@@ -23,7 +25,8 @@ public class player_input : MonoBehaviour {
 
 	void Awake()
 	{
-
+        leekSlash = GetComponent<AudioSource>();
+        
 		anim = GetComponent<Animator>();
 
 		if (anim == null)
@@ -72,6 +75,7 @@ public class player_input : MonoBehaviour {
 		anim.SetFloat("x", inputTurn);
 		anim.SetFloat("y", inputForward);
 		if (Input.GetKey (KeyCode.Joystick1Button1) || Input.GetKey("k")) {
+            leekSlash.Play();
 			anim.SetBool ("attack", true);
 		} else {
 			anim.SetBool ("attack", false);
