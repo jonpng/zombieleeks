@@ -5139,8 +5139,8 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1686080602}
   - {fileID: 854159073}
-  numTotalBois: 9
-  numTotalPunks: 1
+  numTotalBois: 2
+  numTotalPunks: 0
   numTotalDudes: 0
   numAliveBois: 0
   numAlivePunks: 0
@@ -6826,7 +6826,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 5
   m_Center: {x: 0, y: 10, z: 0}
 --- !u!114 &915059974
 MonoBehaviour:
@@ -9397,7 +9397,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1426661178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55.85, y: 6.62, z: -50.98}
+  m_LocalPosition: {x: -54.6, y: 6.62, z: -50.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

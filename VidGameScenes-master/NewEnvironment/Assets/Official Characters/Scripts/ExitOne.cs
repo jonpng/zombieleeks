@@ -19,7 +19,7 @@ public class ExitOne : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject.tag == "Player" && GameObject.FindWithTag("Enemy") == null)
+        if (other.gameObject.tag == "Player" )//&& GameObject.FindWithTag("Enemy") == null)
         {
             Debug.Log("player");
             // ... the player is in range.
