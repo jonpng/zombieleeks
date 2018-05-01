@@ -5139,7 +5139,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1686080602}
   - {fileID: 854159073}
-  numTotalBois: 10
+  numTotalBois: 3
   numTotalPunks: 1
   numTotalDudes: 0
   numAliveBois: 0
@@ -5149,7 +5149,7 @@ MonoBehaviour:
   numDeadPunks: 0
   numDeadDudes: 0
   spawnNumBois: 0
-  spawnNumPunks: 1
+  spawnNumPunks: 0
   spawnNumDudes: 0
   level: 0
 --- !u!4 &453982006
@@ -6816,6 +6816,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &915059973
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 915059967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 10, z: 0}
 --- !u!114 &915059974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9348,7 +9360,7 @@ GameObject:
   - component: {fileID: 1426661180}
   - component: {fileID: 1426661179}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Exitrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
