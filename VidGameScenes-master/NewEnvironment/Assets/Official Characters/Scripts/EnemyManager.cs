@@ -48,7 +48,7 @@ public class EnemyManager : MonoBehaviour
         {
             return;
         } //if less than 4 bois are alive and more can spawn
-        if (numAliveBois < 4 && numAliveBois < numTotalBois)
+        if (numAliveBois < 4 && (numAliveBois + numDeadBois) < numTotalBois)
         { //add one more alive boi
             numAliveBois += 1;
             Instantiate(boi, spawnPoints[spawnNumBois].position, spawnPoints[spawnNumBois].rotation);
@@ -61,9 +61,9 @@ public class EnemyManager : MonoBehaviour
         {
             return;
         }
-        if (numAlivePunks < 3 && numAlivePunks < numTotalPunks)
+        if (numAlivePunks < 3 && (numAlivePunks + numDeadPunks) < numTotalPunks)
         {
-            numAliveDudes += 1;
+            numAlivePunks += 1;
             Instantiate(punk, spawnPoints[spawnNumPunks].position, spawnPoints[spawnNumPunks].rotation);
         }
     }
@@ -75,7 +75,7 @@ public class EnemyManager : MonoBehaviour
         {
             return;
         }
-        if (numAliveDudes < 2 && numAliveDudes < numTotalDudes)
+        if (numAliveDudes < 2 && (numAliveDudes + numDeadDudes) < numTotalDudes)
         {
             numAliveDudes += 1;
             Instantiate(dude, spawnPoints[spawnNumDudes].position, spawnPoints[spawnNumDudes].rotation);
@@ -84,12 +84,12 @@ public class EnemyManager : MonoBehaviour
 
     public void KillUpdate(string name)
     {
-        if (name.Equals("BurgerBoi"))
+        if (name.Equals("BurgerBoiWSound(Clone)"))
         {
             numAliveBois -= 1;
             numDeadBois += 1;
         } 
-        else if (name.Equals("IcyPunk"))
+        else if (name.Equals("IcyPunkWSound(Clone)"))
         {
             numAlivePunks -= 1;
             numDeadPunks += 1;

@@ -9,6 +9,7 @@ public class LunchboxPlus : MonoBehaviour {
     float sinkSpeed;                            // The speed at which the lunchbox sinks after being used.
     bool once;
     ParticleSystem healthParticles;
+    public float speed = 12f;
 
     // Use this for initialization
     void Start () {
@@ -22,13 +23,14 @@ public class LunchboxPlus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        transform.Rotate(Vector3.back * speed * Time.deltaTime);
 		
 	}
 
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Leek")
         {
             if (once)
             {
