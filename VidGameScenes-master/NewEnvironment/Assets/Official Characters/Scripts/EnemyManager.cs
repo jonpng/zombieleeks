@@ -18,6 +18,7 @@ public class EnemyManager : MonoBehaviour
     public int numTotalBois;
     public int numTotalPunks;
     public int numTotalDudes; //to be decided by level
+    public int totalEnemies;
 
     public int numAliveBois = 0;
     public int numAlivePunks = 0;
@@ -26,12 +27,13 @@ public class EnemyManager : MonoBehaviour
     public int numDeadBois = 0;
     public int numDeadPunks = 0;
     public int numDeadDudes = 0; //number of currently dead enemies
+    public int totalDead;
 
     public int spawnNumBois;
     public int spawnNumPunks;
     public int spawnNumDudes; //which spawn to use
 
-    public int level;
+    public bool isDone;
 
     void Start()
     { //at the designated init times, start spawning continuously
@@ -39,6 +41,9 @@ public class EnemyManager : MonoBehaviour
         InvokeRepeating("SpawnPunks", initSpawnPunkTime, spawnPunkTime);
         InvokeRepeating("SpawnDudes", initSpawnDudeTime, spawnDudeTime);
         playerHealth = GameObject.Find("Protagonist").GetComponent<PlayerHealth>();
+        isDone = false;
+        totalEnemies = numTotalBois + numTotalPunks + numTotalDudes;
+        totalDead = 0;
     }
 
 
@@ -97,6 +102,11 @@ public class EnemyManager : MonoBehaviour
         {
             numAliveDudes -= 1;
             numDeadDudes += 1;
+        }
+        totalDead += 1;
+        if (totalDead == totalEnemies)
+        {
+            isDone = true;
         }
     }
 }
