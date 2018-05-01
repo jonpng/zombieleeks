@@ -7,6 +7,7 @@ using UnityEngine;
 public class player_input : MonoBehaviour {
 
     private AudioSource leekSlash;
+    public AudioClip leekClip;
 
 	private Animator anim;
 	private Rigidbody rbody;
@@ -26,7 +27,7 @@ public class player_input : MonoBehaviour {
 	void Awake()
 	{
         leekSlash = GetComponent<AudioSource>();
-        
+        leekClip = GetComponent<AudioClip>();
 		anim = GetComponent<Animator>();
 
 		if (anim == null)
@@ -44,7 +45,8 @@ public class player_input : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		leftFoot = this.transform.Find("mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot");
+        
+        leftFoot = this.transform.Find("mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot");
 		rightFoot = this.transform.Find("mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg/mixamorig:RightFoot");
 
 		if (leftFoot == null || rightFoot == null)
@@ -75,6 +77,7 @@ public class player_input : MonoBehaviour {
 		anim.SetFloat("x", inputTurn);
 		anim.SetFloat("y", inputForward);
 		if (Input.GetKey (KeyCode.Joystick1Button1) || Input.GetKey("k")) {
+            //leekSlash.PlayOneShot(leekClip, 0.35f);
             leekSlash.Play();
 			anim.SetBool ("attack", true);
 		} else {

@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cafeteria.unity
     guid: 2f2e4770d80c7fa4680041af648c928e
+  - enabled: 1
+    path: Assets/Scenes/EndGameMenu.unity
+    guid: 23445fb88904a41bba16d627bd9af546

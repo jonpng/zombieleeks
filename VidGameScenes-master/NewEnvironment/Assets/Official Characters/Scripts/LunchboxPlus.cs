@@ -9,6 +9,7 @@ public class LunchboxPlus : MonoBehaviour {
     float sinkSpeed;                            // The speed at which the lunchbox sinks after being used.
     bool once;
     ParticleSystem healthParticles;
+    AudioSource healthSound;
     public float speed = 12f;
 
     // Use this for initialization
@@ -19,6 +20,7 @@ public class LunchboxPlus : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
         sinkSpeed = 0.5f;
         once = true;
+        healthSound = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -36,8 +38,12 @@ public class LunchboxPlus : MonoBehaviour {
             {
                 // ...player takes health only once.
                 playerHealth.TakeHealth(health);
+
+                healthSound.Play();
+
                 healthParticles.Emit(1);
                 healthParticles.Stop();
+
                 once = false;
             }
             transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
