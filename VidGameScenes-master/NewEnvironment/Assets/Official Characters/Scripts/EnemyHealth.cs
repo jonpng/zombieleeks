@@ -65,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
 		if(col.gameObject.name == "Leek" && protanim.GetCurrentAnimatorStateInfo(0).IsName("Atak") && recoil == false)
 		{
             recoil = true;
-            Debug.Log("ow!");
+            //Debug.Log("ow!");
             TakeDamage(25);
             hitParticles.Emit(1);
             hitParticles.Stop();

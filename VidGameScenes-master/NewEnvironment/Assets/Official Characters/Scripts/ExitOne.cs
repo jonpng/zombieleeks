@@ -6,10 +6,12 @@ public class ExitOne : MonoBehaviour {
 
     public string nextLevel;
     EnemyManager manager;
+    Animator fader;
 
 	// Use this for initialization
 	void Start () {
         manager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
+        fader = GameObject.Find("Fader").GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -24,6 +26,7 @@ public class ExitOne : MonoBehaviour {
         {
             //Debug.Log("player");
             // ... the player is in range.
+            fader.SetBool("Fade", true);
             UnityEngine.SceneManagement.SceneManager.LoadScene(nextLevel);
         }
     }
