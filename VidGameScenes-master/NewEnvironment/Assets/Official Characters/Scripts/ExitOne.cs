@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExitOne : MonoBehaviour {
 
+    public string nextLevel;
     EnemyManager manager;
 
 	// Use this for initialization
@@ -23,7 +24,7 @@ public class ExitOne : MonoBehaviour {
         {
             //Debug.Log("player");
             // ... the player is in range.
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Lockerhall");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextLevel);
         }
     }
 }

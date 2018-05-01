@@ -53,7 +53,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(playerInRange);
+       // Debug.Log(playerInRange);
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
         if (timer >= timeBetweenAttacks)

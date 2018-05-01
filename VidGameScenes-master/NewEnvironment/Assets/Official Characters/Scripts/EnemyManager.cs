@@ -80,7 +80,7 @@ public class EnemyManager : MonoBehaviour
         {
             return;
         }
-        if (numAliveDudes < 2 && (numAliveDudes + numDeadDudes) < numTotalDudes)
+        if (numAliveDudes < 1 && (numAliveDudes + numDeadDudes) < numTotalDudes)
         {
             numAliveDudes += 1;
             Instantiate(dude, spawnPoints[spawnNumDudes].position, spawnPoints[spawnNumDudes].rotation);
