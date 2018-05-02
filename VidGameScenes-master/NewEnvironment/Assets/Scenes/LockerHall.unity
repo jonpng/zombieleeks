@@ -20225,6 +20225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beffe040ff90346049827e2f6d315aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leekClip: {fileID: 0}
   isGrounded: 0
   animationSpeed: 1
   rootMovementSpeed: 1
